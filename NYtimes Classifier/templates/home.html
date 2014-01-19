@@ -41,7 +41,7 @@
 	<a id="logo" href="http://i1.nyt.com/images/misc/nytlogo379x64.gif" title="nytimes.com"><img src="http://i1.nyt.com/images/misc/nytlogo379x64.gif"></a>
 	<hr>
 		<h2>Article Classifier</h2>
-                <form id = "beer" method="POST" action="/">
+                <form id = "content" method="POST" action="/">
                 	<br>
                 	<textarea name="entry" rows="10" cols="100">Please enter your text here</textarea><br>
                 	<br>
@@ -77,9 +77,9 @@
                 };
         })
 
-        $("#beer").submit(function(e) {
+        $("#content").submit(function(e) {
                 e.preventDefault()
-                var payload = $("#beer").serializeObject()
+                var payload = $("#content").serializeObject()
         
                 $.post("/", payload, function(data) {
                         if (data.results) {
